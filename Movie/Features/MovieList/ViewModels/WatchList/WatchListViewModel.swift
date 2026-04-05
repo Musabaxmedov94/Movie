@@ -91,7 +91,6 @@ final class WatchListViewModel: MovieListViewModel {
     func didSelect(index: Int) {
         guard list.indices.contains(index) else { return }
         guard let id = list[index].id else { return }
-        removeFromWatchList(id: id)
     }
     
     private func removeFromWatchList(id: Int) {
