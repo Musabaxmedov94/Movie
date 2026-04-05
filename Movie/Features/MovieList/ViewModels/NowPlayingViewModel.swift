@@ -11,7 +11,6 @@ import UIKit
 final class NowPlayingViewModel: MovieListViewModel {
     func didSelect(index: Int) {
         guard let id = list[index].id else { return }
-        addToWatchList(id: id)
     }
 
     var callBack: ((MovieListViewState) -> Void)?
