@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A593D4CD2F8562E700FBE664 /* FlexAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = A593D4CC2F8562E700FBE664 /* FlexAnchor */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A57462242F61CD7F00B87224 /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A593D4CD2F8562E700FBE664 /* FlexAnchor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,7 @@
 			);
 			name = Movie;
 			packageProductDependencies = (
+				A593D4CC2F8562E700FBE664 /* FlexAnchor */,
 			);
 			productName = Movie;
 			productReference = A57462242F61CD7F00B87224 /* Movie.app */;
@@ -99,6 +105,9 @@
 			);
 			mainGroup = A5A64F132F2A7B1300DFC1F6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A593D4CB2F8562E700FBE664 /* XCLocalSwiftPackageReference "../FlexAnchor" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A5A64F132F2A7B1300DFC1F6;
 			projectDirPath = "";
@@ -335,6 +344,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A593D4CB2F8562E700FBE664 /* XCLocalSwiftPackageReference "../FlexAnchor" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../FlexAnchor;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A593D4CC2F8562E700FBE664 /* FlexAnchor */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlexAnchor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5A64F142F2A7B1300DFC1F6 /* Project object */;
 }
