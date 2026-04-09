@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Bricks
+import Caching
 
 final class ImageLoader {
     

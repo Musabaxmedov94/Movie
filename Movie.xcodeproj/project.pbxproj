@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A593F9D42F87ED3A0042D92B /* Bricks in Frameworks */ = {isa = PBXBuildFile; productRef = A593F9D32F87ED3A0042D92B /* Bricks */; };
-		A593F9D72F87EE940042D92B /* Bricks in Frameworks */ = {isa = PBXBuildFile; productRef = A593F9D62F87EE940042D92B /* Bricks */; };
+		A593FD342F8827360042D92B /* Caching in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD332F8827360042D92B /* Caching */; };
+		A593FD362F8827360042D92B /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD352F8827360042D92B /* Components */; };
+		A593FD382F8827360042D92B /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD372F8827360042D92B /* FlexLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A593F9D42F87ED3A0042D92B /* Bricks in Frameworks */,
-				A593F9D72F87EE940042D92B /* Bricks in Frameworks */,
+				A593FD382F8827360042D92B /* FlexLayout in Frameworks */,
+				A593FD362F8827360042D92B /* Components in Frameworks */,
+				A593FD342F8827360042D92B /* Caching in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +79,9 @@
 			);
 			name = Movie;
 			packageProductDependencies = (
-				A593F9D32F87ED3A0042D92B /* Bricks */,
-				A593F9D62F87EE940042D92B /* Bricks */,
+				A593FD332F8827360042D92B /* Caching */,
+				A593FD352F8827360042D92B /* Components */,
+				A593FD372F8827360042D92B /* FlexLayout */,
 			);
 			productName = Movie;
 			productReference = A57462242F61CD7F00B87224 /* Movie.app */;
@@ -109,7 +112,7 @@
 			mainGroup = A5A64F132F2A7B1300DFC1F6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A593F9D52F87EE940042D92B /* XCLocalSwiftPackageReference "../Bricks" */,
+				A593FD322F8827360042D92B /* XCLocalSwiftPackageReference "../Bricks" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A5A64F132F2A7B1300DFC1F6;
@@ -349,20 +352,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		A593F9D52F87EE940042D92B /* XCLocalSwiftPackageReference "../Bricks" */ = {
+		A593FD322F8827360042D92B /* XCLocalSwiftPackageReference "../Bricks" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Bricks;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A593F9D32F87ED3A0042D92B /* Bricks */ = {
+		A593FD332F8827360042D92B /* Caching */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Bricks;
+			productName = Caching;
 		};
-		A593F9D62F87EE940042D92B /* Bricks */ = {
+		A593FD352F8827360042D92B /* Components */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Bricks;
+			productName = Components;
+		};
+		A593FD372F8827360042D92B /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlexLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Bricks
+import FlexLayout
 
 final class BottomBarSegmentView: UIView {
     
