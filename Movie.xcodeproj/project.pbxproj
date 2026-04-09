@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A593D4CD2F8562E700FBE664 /* FlexAnchor in Frameworks */ = {isa = PBXBuildFile; productRef = A593D4CC2F8562E700FBE664 /* FlexAnchor */; };
+		A593F9D42F87ED3A0042D92B /* Bricks in Frameworks */ = {isa = PBXBuildFile; productRef = A593F9D32F87ED3A0042D92B /* Bricks */; };
+		A593F9D72F87EE940042D92B /* Bricks in Frameworks */ = {isa = PBXBuildFile; productRef = A593F9D62F87EE940042D92B /* Bricks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A593D4CD2F8562E700FBE664 /* FlexAnchor in Frameworks */,
+				A593F9D42F87ED3A0042D92B /* Bricks in Frameworks */,
+				A593F9D72F87EE940042D92B /* Bricks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +77,8 @@
 			);
 			name = Movie;
 			packageProductDependencies = (
-				A593D4CC2F8562E700FBE664 /* FlexAnchor */,
+				A593F9D32F87ED3A0042D92B /* Bricks */,
+				A593F9D62F87EE940042D92B /* Bricks */,
 			);
 			productName = Movie;
 			productReference = A57462242F61CD7F00B87224 /* Movie.app */;
@@ -106,7 +109,7 @@
 			mainGroup = A5A64F132F2A7B1300DFC1F6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A593D4CB2F8562E700FBE664 /* XCLocalSwiftPackageReference "../FlexAnchor" */,
+				A593F9D52F87EE940042D92B /* XCLocalSwiftPackageReference "../Bricks" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A5A64F132F2A7B1300DFC1F6;
@@ -346,16 +349,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		A593D4CB2F8562E700FBE664 /* XCLocalSwiftPackageReference "../FlexAnchor" */ = {
+		A593F9D52F87EE940042D92B /* XCLocalSwiftPackageReference "../Bricks" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../FlexAnchor;
+			relativePath = ../Bricks;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A593D4CC2F8562E700FBE664 /* FlexAnchor */ = {
+		A593F9D32F87ED3A0042D92B /* Bricks */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = FlexAnchor;
+			productName = Bricks;
+		};
+		A593F9D62F87EE940042D92B /* Bricks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Bricks;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
