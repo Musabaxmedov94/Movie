@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Bricks
 
 final class ImageLoader {
     
