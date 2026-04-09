@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FlexAnchor
+import Bricks
 
 enum MovieListViewState {
     case loading

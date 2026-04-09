@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FlexAnchor
+import Bricks
 
 final class ImageCell: UICollectionViewCell {
     
