@@ -1,0 +1,15 @@
+{
+  "originHash" : "1fae359806ca141fbab087e5cc6f34175e0c03447ec49210d7296df534f87589",
+  "pins" : [
+    {
+      "identity" : "bricks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Musabaxmedov94/bricks.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "feb3cbc8449c5243e6a86ead9346be82ce0352df"
+      }
+    }
+  ],
+  "version" : 3
+}
