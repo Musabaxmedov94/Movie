@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A593FD342F8827360042D92B /* Caching in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD332F8827360042D92B /* Caching */; };
-		A593FD362F8827360042D92B /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD352F8827360042D92B /* Components */; };
-		A593FD382F8827360042D92B /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A593FD372F8827360042D92B /* FlexLayout */; };
+		A5D15C272F896A11007CE2B5 /* Caching in Frameworks */ = {isa = PBXBuildFile; productRef = A5D15C262F896A11007CE2B5 /* Caching */; };
+		A5D15C292F896A11007CE2B5 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = A5D15C282F896A11007CE2B5 /* Components */; };
+		A5D15C2B2F896A11007CE2B5 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = A5D15C2A2F896A11007CE2B5 /* FlexLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A593FD382F8827360042D92B /* FlexLayout in Frameworks */,
-				A593FD362F8827360042D92B /* Components in Frameworks */,
-				A593FD342F8827360042D92B /* Caching in Frameworks */,
+				A5D15C2B2F896A11007CE2B5 /* FlexLayout in Frameworks */,
+				A5D15C292F896A11007CE2B5 /* Components in Frameworks */,
+				A5D15C272F896A11007CE2B5 /* Caching in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,9 +79,9 @@
 			);
 			name = Movie;
 			packageProductDependencies = (
-				A593FD332F8827360042D92B /* Caching */,
-				A593FD352F8827360042D92B /* Components */,
-				A593FD372F8827360042D92B /* FlexLayout */,
+				A5D15C262F896A11007CE2B5 /* Caching */,
+				A5D15C282F896A11007CE2B5 /* Components */,
+				A5D15C2A2F896A11007CE2B5 /* FlexLayout */,
 			);
 			productName = Movie;
 			productReference = A57462242F61CD7F00B87224 /* Movie.app */;
@@ -112,7 +112,7 @@
 			mainGroup = A5A64F132F2A7B1300DFC1F6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A593FD322F8827360042D92B /* XCLocalSwiftPackageReference "../Bricks" */,
+				A5D15C252F896A11007CE2B5 /* XCRemoteSwiftPackageReference "bricks" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A5A64F132F2A7B1300DFC1F6;
@@ -351,24 +351,31 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		A593FD322F8827360042D92B /* XCLocalSwiftPackageReference "../Bricks" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Bricks;
+/* Begin XCRemoteSwiftPackageReference section */
+		A5D15C252F896A11007CE2B5 /* XCRemoteSwiftPackageReference "bricks" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Musabaxmedov94/bricks.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A593FD332F8827360042D92B /* Caching */ = {
+		A5D15C262F896A11007CE2B5 /* Caching */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = A5D15C252F896A11007CE2B5 /* XCRemoteSwiftPackageReference "bricks" */;
 			productName = Caching;
 		};
-		A593FD352F8827360042D92B /* Components */ = {
+		A5D15C282F896A11007CE2B5 /* Components */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = A5D15C252F896A11007CE2B5 /* XCRemoteSwiftPackageReference "bricks" */;
 			productName = Components;
 		};
-		A593FD372F8827360042D92B /* FlexLayout */ = {
+		A5D15C2A2F896A11007CE2B5 /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = A5D15C252F896A11007CE2B5 /* XCRemoteSwiftPackageReference "bricks" */;
 			productName = FlexLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
