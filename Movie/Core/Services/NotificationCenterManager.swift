@@ -8,28 +8,26 @@
 import Foundation
 
 enum NotificationCenterManager {
-    case updaitWatchList
+    case updateWatchList
     
     var name: String {
         switch self {
-        case .updaitWatchList:
-            return "updaitWatchList"
+        case .updateWatchList:
+            return "updateWatchList"
         }
     }
     
     
     func post() {
-        switch self {
-        case .updaitWatchList:
-            NotificationCenter.default.post(
-                name: NSNotification.Name(name),
-                object: nil,
-                userInfo: nil)
-        }
+        NotificationCenter.default.post(
+            name: NSNotification.Name(name),
+            object: nil,
+            userInfo: nil)
     }
     
-    func observ(usingBlock: @escaping (Notification) -> Void) {
-        NotificationCenter.default.addObserver(
+    @discardableResult
+    func observ(usingBlock: @escaping (Notification) -> Void) -> NSObjectProtocol {
+       return  NotificationCenter.default.addObserver(
             forName: NSNotification.Name(name),
             object: nil,
             queue: .main,
