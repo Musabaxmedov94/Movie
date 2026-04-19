@@ -101,9 +101,7 @@ final class MovieListViewController: UIViewController {
     private func configureBinding() {
         viewModel.callBack = { [weak self ] state in
             guard let self else { return }
-            DispatchQueue.main.async {
-                self.render(state: state)
-            }
+            self.render(state: state)
         }
     }
     
@@ -195,19 +193,19 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     // MARK: - Trigger by Scroll (scrollViewDidScroll)
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard !isLoading, hasMoreData else { return }
-        
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let frameHeight = scrollView.frame.size.height
-        
-        let threeshold: CGFloat = 150
-        
-        if offsetY > (contentHeight - frameHeight - threeshold) {
-            loadMore()
-        }
-    }
+    /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
+     guard !isLoading, hasMoreData else { return }
+     
+     let offsetY = scrollView.contentOffset.y
+     let contentHeight = scrollView.contentSize.height
+     let frameHeight = scrollView.frame.size.height
+     
+     let threeshold: CGFloat = 150
+     
+     if offsetY > (contentHeight - frameHeight - threeshold) {
+     loadMore()
+     }
+     }*/
     
     // MARK: - Trigger by Cell (willDisplay)
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -224,4 +222,4 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
 }
- 
+
