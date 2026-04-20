@@ -23,7 +23,7 @@ private struct APIErrorResponse: Decodable {
 
 extension ResponseHandler {
     func handle<T: Decodable>(data: Data?) -> NetworkResponse<T> {
-        guard let data else { return .error("Data not found") }
+        guard let data else { return .failure(.noData) }
 
         if let model = try? JSONDecoder().decode(T.self, from: data) {
             return .success(model)
@@ -32,9 +32,9 @@ extension ResponseHandler {
         if let errorModel = try? JSONDecoder().decode(APIErrorResponse.self, from: data),
            let message = errorModel.statusMessage,
            !message.isEmpty {
-            return .error(message)
+            return .failure(.networkError(message))
         }
 
-        return .error("Decode error")
+        return .failure(.decodeError)
     }
 }

@@ -7,7 +7,4 @@
 
 import Foundation
 
-enum NetworkResponse<T> {
-    case error(String)
-    case success(T)
-}
+typealias NetworkResponse<T> = Result<T, AppError>

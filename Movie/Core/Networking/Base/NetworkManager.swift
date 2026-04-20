@@ -23,7 +23,7 @@ final class NetworkManager: URLBuilder, ResponseHandler {
         self.session = session
     }
     
-    @discardableResult
+    /*@discardableResult
     func request<T: Decodable>(model: RequestModel, completion: @escaping (NetworkResponse<T>) -> Void) -> URLSessionDataTask? {
         guard let urlRequest = getUrlRequest(model: model)  else { return nil }
         let dataTask = session.dataTask(with: urlRequest) {
@@ -36,6 +36,19 @@ final class NetworkManager: URLBuilder, ResponseHandler {
         }
         dataTask.resume()
         return dataTask
+    }*/
+    
+    func request<T: Decodable>(model: RequestModel) async -> NetworkResponse<T> {
+        guard let urlRequest = getUrlRequest(model: model) else {
+            return .failure(.noData)
+        }
+        
+        do {
+            let (data, _) = try await session.data(for: urlRequest)
+            return handle(data: data)
+        } catch {
+            return .failure(.networkError(error.localizedDescription))
+        }
     }
     
     @discardableResult
