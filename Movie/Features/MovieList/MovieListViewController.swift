@@ -11,7 +11,7 @@ import FlexLayout
 enum MovieListViewState {
     case loading
     case loaded
-    case error(String)
+    case error(AppError)
     case reloadData
     case pagingData([IndexPath])
     case addToWatchList(String)
@@ -101,7 +101,9 @@ final class MovieListViewController: UIViewController {
     private func configureBinding() {
         viewModel.callBack = { [weak self ] state in
             guard let self else { return }
-            self.render(state: state)
+            DispatchQueue.main.async {
+                self.render(state: state)
+            }
         }
     }
     
@@ -112,9 +114,9 @@ final class MovieListViewController: UIViewController {
         case .loaded:
             view.hideLoading()
             refreshController.endRefreshing()
-        case .error(let message):
+        case .error(let appError):
             isLoading = false
-            show(title: "Error", message: message  )
+            show(title: "Error", message: appError.message)
         case .reloadData:
             hasMoreData = true
             collection.reloadData()

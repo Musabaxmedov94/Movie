@@ -17,7 +17,7 @@ final class WatchListViewModel: BaseMovieListViewModel {
         notificationToken = NotificationCenterManager.updateWatchList.observ(usingBlock: {
             [weak self] _ in
             guard let self else { return }
-            self.getList()
+                self.getList()
         })
     }
     
@@ -46,45 +46,43 @@ final class WatchListViewModel: BaseMovieListViewModel {
         guard list.indices.contains(index),
               let id = list[index].id
         else { return }
+        list.remove(at: index)
+        callBack?(.reloadData)
         removeFromWatchList(id: id)
     }
     
     
     
     private func removeFromWatchList(id: Int) {
-        callBack?(.loading)
-        
-        guard let body = try? JSONEncoder().encode(
-            AddToWatchListRequestBody(
-                mediaId: id,
-                watchlist: false,
-                mediaType: "movie")
-        ) else { return }
-        
-        let request = RequestModel(
-            method: .post,
-            path: AccountEndpoint.addToWatchList.path,
-            query: AccountEndpoint.addToWatchList.query,
-            body: body)
-        
-        let completion: (NetworkResponse<AddToWatchListResponse>) -> Void = {
-            [weak self] response in
-            guard let self else { return }
-            self.callBack?(.loaded)
+        Task {
+            
+            guard let body = try? JSONEncoder().encode(
+                AddToWatchListRequestBody(
+                    mediaId: id,
+                    watchlist: false,
+                    mediaType: "movie")
+            ) else { return }
+            
+            let request = RequestModel(
+                method: .post,
+                path: AccountEndpoint.addToWatchList.path,
+                query: AccountEndpoint.addToWatchList.query,
+                body: body)
+            
+            let response: (NetworkResponse<AddToWatchListResponse>) = await NetworkManager.shared.request(model: request)
             
             switch response {
-            case .error(let message):
-                self.callBack?(.error(message))
-                
+            case .failure(let appError):
+                self.getList()
+                self.callBack?(.error(appError))
             case .success(let model):
                 if model.success == true || model.statusCode == 12 || model.statusCode == 13  {
-                    self.getList()
+                    break
                 } else {
-                    self.callBack?(.error(model.statusMessage ?? "Unknown error"))
+                    self.getList()
+                    self.callBack?(.error(.networkError(model.statusMessage ?? "Unknown error")))
                 }
             }
         }
-        
-        NetworkManager.shared.request(model: request, completion: completion)
     }
 }
